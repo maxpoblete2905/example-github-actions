@@ -1,0 +1,17 @@
+Diferencias clave entre Azure y AWS:
+Registro de contenedores:
+
+Azure: Se utiliza Azure Container Registry (ACR) para almacenar imágenes Docker.
+AWS: Se utiliza Amazon Elastic Container Registry (ECR).
+Autenticación y permisos:
+
+Azure: Se utiliza OIDC para autenticarse en Azure con los contenedores.
+AWS: Se utiliza AWS IAM roles y AWS CLI para autenticarse y operar en los servicios de AWS.
+Despliegue en Kubernetes:
+
+Azure: Se puede utilizar Azure Kubernetes Service (AKS).
+AWS: Se utiliza Amazon Elastic Kubernetes Service (EKS) para orquestación de contenedores.
+Herramientas de despliegue:
+
+Azure: Las herramientas usadas son específicas de Azure.
+AWS: Las acciones de GitHub Actions específicas de AWS incluyen aws-actions/configure-aws-credentials y amazon-ecr-login para configurar y autenticar los servicios.

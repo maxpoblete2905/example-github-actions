@@ -23,14 +23,5 @@ jobs:
     # Los pasos representan una secuencia de tareas que se ejecutarán como parte del trabajo
     steps:
       # Revisa tu repositorio en $GITHUB_WORKSPACE, para que tu trabajo pueda acceder a él
-      - uses: actions/checkout@v4
-
-      # Ejecuta un solo comando usando el shell del runner
-      - name: Ejecutar un script de una línea
-        run: echo Hello, world!
-
-      # Ejecuta un conjunto de comandos usando el shell del runner
-      - name: Ejecutar un script de varias líneas
-        run: |
-          echo Añade otras acciones para construir,
-          echo probar y desplegar tu proyecto.
+      - name: "mostrar mensaje"
+        run: echo "hola mundo"

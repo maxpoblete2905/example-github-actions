@@ -6,9 +6,9 @@ name: CI
 on:
   # Dispara el flujo de trabajo en eventos de push o pull request, pero solo para la rama "main"
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
   # Permite ejecutar este flujo de trabajo manualmente desde la pestaña de Actions
   workflow_dispatch:

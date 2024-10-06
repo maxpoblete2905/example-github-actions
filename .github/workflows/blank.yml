@@ -15,17 +15,16 @@ jobs:
       - name: "Revisar el repositorio"
         uses: actions/checkout@v3
 
-      - name: "Instalar Node.js"
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+      - name: "Mostrar mensaje"
+        run: echo "Hola mundo"
 
-      - name: "Instalar dependencias"
-        run: npm install
-
-      - name: "Ejecutar script"
-        run: node script.js
-        env:
-          DATA_BASE_STRING: ${{ secrets.DATA_BASE_STRING }}
-          VALOR_UNO_SECRET: ${{ secrets.VALOR_UNO_SECRET }}
-          VALOR_DOS_SECRET: ${{ secrets.VALOR_DOS_SECRET }}
+      # Mostrar variables de entorno definidas como secretos y variables
+      - name: "Mostrar variables de entorno y secretos"
+        run: |
+          echo "Imprimiendo variables de entorno y secretos..."
+          echo "DATA_BASE_STRING: ${{ secrets.DATA_BASE_STRING }}"
+          echo "VALOR_UNO_SECRET: ${{ secrets.VALOR_UNO_SECRET }}"
+          echo "VALOR_DOS_SECRET: ${{ secrets.VALOR_DOS_SECRET }}"
+          echo "PORT: $PORT"          # Imprimir la variable de entorno PORT
+          echo "VALOR_UNO: $VALOR_UNO" # Imprimir la variable de entorno VALOR_UNO
+          echo "VALOR_DOS: $VALOR_DOS" # Imprimir la variable de entorno VALOR_DOS

@@ -23,6 +23,6 @@ jobs:
       - name: "Mostrar variables de entorno"
         run: |
           echo "Imprimiendo variables de entorno..."
-          echo "DATA_BASE_STRING: ${{ secrets.DATA_BASE_STRING }}"
-          echo "VALOR_UNO_SECRET: ${{ secrets.VALOR_UNO_SECRET }}"
-          echo "VALOR_DOS_SECRET: ${{ secrets.VALOR_DOS_SECRET }}"
+          echo "DATA_BASE_STRING: ${{ secret.DATA_BASE_STRING }}"
+          echo "VALOR_UNO_SECRET: ${{ secret.VALOR_UNO_SECRET }}"
+          echo "VALOR_DOS_SECRET: ${{ secret.VALOR_DOS_SECRET }}"

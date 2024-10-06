@@ -1,27 +1,30 @@
-# Este es un flujo de trabajo básico para ayudarte a comenzar con Actions
-
 name: CI
 
-# Controla cuándo se ejecutará el flujo de trabajo
 on:
-  # Dispara el flujo de trabajo en eventos de push o pull request, pero solo para la rama "main"
   push:
-    branches: [ "develop" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "develop" ]
-
-  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña de Actions
+    branches: [ "main" ]
   workflow_dispatch:
 
-# Una ejecución del flujo de trabajo se compone de uno o más trabajos que pueden ejecutarse secuencialmente o en paralelo
 jobs:
-  # Este flujo de trabajo contiene un solo trabajo llamado "build"
   build:
-    # El tipo de runner en el que se ejecutará el trabajo
     runs-on: ubuntu-latest
 
-    # Los pasos representan una secuencia de tareas que se ejecutarán como parte del trabajo
     steps:
-      # Revisa tu repositorio en $GITHUB_WORKSPACE, para que tu trabajo pueda acceder a él
-      - name: "mostrar mensaje"
-        run: echo "hola mundo"
+      - name: "Revisar el repositorio"
+        uses: actions/checkout@v3
+
+      - name: "Mostrar mensaje"
+        run: echo "Hola mundo"
+
+      # Mostrar variables de entorno definidas como secretos y variables
+      - name: "Mostrar variables de entorno y secretos"
+        run: |
+          echo "Imprimiendo variables de entorno y secretos..."
+          echo "DATA_BASE_STRING: ${{ secrets.DATA_BASE_STRING }}"
+          echo "VALOR_UNO_SECRET: ${{ secrets.VALOR_UNO_SECRET }}"
+          echo "VALOR_DOS_SECRET: ${{ secrets.VALOR_DOS_SECRET }}"
+          echo "PORT: $PORT"          # Imprimir la variable de entorno PORT
+          echo "VALOR_UNO: $VALOR_UNO" # Imprimir la variable de entorno VALOR_UNO
+          echo "VALOR_DOS: $VALOR_DOS" # Imprimir la variable de entorno VALOR_DOS
